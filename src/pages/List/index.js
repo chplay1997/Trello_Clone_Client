@@ -158,7 +158,7 @@ function List() {
     return (
         <div className={'board-wrapper'}>
             <div className="name-board">
-                <h1>{state.boardName}</h1>
+                <h1>{state ? state.boardName : ''}</h1>
             </div>
             <div id={'board'}>
                 <div className={'list-wrapper'}>

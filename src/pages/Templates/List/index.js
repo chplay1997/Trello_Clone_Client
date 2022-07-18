@@ -35,7 +35,6 @@ function List(props) {
     //Handle submit
     const handleClickUseTemplate = (e) => {
         if (state === null) {
-            console.log('run');
             return;
         }
         axios
@@ -45,7 +44,7 @@ function List(props) {
                 board: state.templates[idBoard],
             })
             .then((res) => {
-                navigate(`/list/${res.data._id}`);
+                navigate(`/list/${res.data._id}`, { state: { boardName: state.templates[idBoard].name } });
                 console.log(res);
             })
             .catch(function (error) {
