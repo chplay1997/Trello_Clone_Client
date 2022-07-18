@@ -4,22 +4,21 @@ import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 function Sidebar() {
-    window.addEventListener('click', (e) => {
-        if (e.target.closest('.item-link')) {
-            let linhList = document.querySelectorAll('.item-link');
-            for (let i = 0; i < linhList.length; i++) {
-                linhList[i].classList.remove('active');
-            }
-            e.target.closest('.item-link').classList.add('active');
+    //active
+    const active = (type) => {
+        let path = window.location.pathname.split('/')[1];
+        if (path === type || (path === '' && type == 'boards')) {
+            return 'active';
         }
-    });
+        return '';
+    };
 
     return (
         <aside className={cx('wrapper')}>
             <nav className={cx('home-left-sidebar-container')}>
                 <div>
                     <ul>
-                        <Link to={'/boards'} className={cx('item-link', 'active')}>
+                        <Link to={'/boards'} className={cx('item-link', active('boards'))}>
                             <li className={cx('item')}>
                                 <span className={cx('icon-table')}>
                                     <i className={cx('fa fa-table')} aria-hidden="true"></i>
@@ -27,7 +26,7 @@ function Sidebar() {
                                 <span>Bảng</span>
                             </li>
                         </Link>
-                        <Link to={'/templates/boards'} className={cx('item-link')}>
+                        <Link to={'/templates/boards'} className={cx('item-link', active('templates'))}>
                             <li className={cx('item')}>
                                 <span className={cx('icon-table')}>
                                     <i className={cx('fa fa-book')} aria-hidden="true"></i>
