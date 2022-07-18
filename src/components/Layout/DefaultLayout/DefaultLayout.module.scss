@@ -1,0 +1,17 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: var(--default-layout-width);
+    display: flex;
+}
+
+.content {
+    margin: 40px 16px 0;
+    max-width: 825px;
+    min-width: 288px;
+    width: 100%;
+}

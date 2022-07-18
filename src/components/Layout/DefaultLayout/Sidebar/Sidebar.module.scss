@@ -1,0 +1,39 @@
+.wrapper {
+    width: 272px;
+    position: relative;
+    top: 0px;
+}
+
+.home-left-sidebar-container {
+    margin: 40px 0 0;
+    padding: 0 16px;
+    width: 240px;
+}
+
+.item {
+    list-style: none;
+    margin-bottom: 8px !important;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: none;
+    display: flex;
+    font-weight: bold;
+    margin: 0;
+    min-height: 20px;
+    overflow: hidden;
+    padding: 6px 8px 6px 0;
+    text-decoration: none;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 85ms;
+    transition-timing-function: ease;
+}
+
+.item:hover {
+    background-color: #ccc;
+    cursor: pointer;
+    color: #0079bf;
+}
+
+.icon-table {
+    margin: 0 12px;
+}
