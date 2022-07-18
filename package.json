@@ -27,6 +27,10 @@
         "test": "react-app-rewired test",
         "eject": "react-app-rewired eject"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chplay1997/Trello_Clone_Client.git"
+    },
     "eslintConfig": {
         "extends": [
             "react-app",
