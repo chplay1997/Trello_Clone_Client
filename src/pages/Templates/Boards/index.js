@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 function Boards() {
     const templates = [
-        { id: 1, image: 1, name: 'Remote Class Template' },
-        { id: 2, image: 2, name: 'Company Overview' },
-        { id: 3, image: 3, name: 'Game Development' },
-        { id: 4, image: 4, name: 'Design Project Template' },
+        { id: 0, image: 1, name: 'Remote Class Template' },
+        { id: 1, image: 2, name: 'Company Overview' },
+        { id: 2, image: 3, name: 'Game Development' },
+        { id: 3, image: 4, name: 'Design Project Template' },
     ];
 
     return (

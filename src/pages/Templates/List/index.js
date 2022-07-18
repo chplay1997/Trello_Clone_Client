@@ -38,19 +38,11 @@ function List(props) {
             console.log('run');
             return;
         }
-        // e.preventDefault();
-        let board = {};
-        for (let i = 0; i < state.templates.length; i++) {
-            if (state.templates[i].id === idBoard) {
-                board = state.templates[i];
-                break;
-            }
-        }
         axios
             .post('http://localhost:9000/api/boards/createTemplate', {
                 list: list,
                 tasks: tasks,
-                board: board,
+                board: state.templates[idBoard],
             })
             .then((res) => {
                 navigate(`/list/${res.data._id}`);
