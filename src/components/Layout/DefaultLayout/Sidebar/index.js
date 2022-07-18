@@ -7,7 +7,7 @@ function Sidebar() {
     //active
     const active = (type) => {
         let path = window.location.pathname.split('/')[1];
-        if (path === type || (path === '' && type == 'boards')) {
+        if (path === type || (path === '' && type === 'boards')) {
             return 'active';
         }
         return '';
