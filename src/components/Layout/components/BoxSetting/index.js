@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 import ModalDelete from '~/components/Layout/components/ModalDelete';
 import Loading from '../Loading';
@@ -39,6 +40,16 @@ function BoxSetting(props) {
             }, 200);
         }
     });
+
+    //Sort task
+    const handleClickSortTask = async (type) => {
+        const sort = await axios.put(`http://localhost:9000/api/list/sort`, {
+            _id: props.idSetting,
+            type: type,
+        });
+        props.render();
+        props.setShowSetting(false);
+    };
     return (
         <>
             <div className="pop-over">
@@ -71,6 +82,31 @@ function BoxSetting(props) {
                                 <i className="fa fa-trash" aria-hidden="true"></i>
                             </span>
                             <span className="pop-over-item-name">Xóa danh sách này</span>
+                        </li>
+
+                        {/* sort */}
+                        <li
+                            className="pop-over-item"
+                            onClick={() => {
+                                handleClickSortTask('asc');
+                            }}
+                        >
+                            <span className="pop-over-item-icon">
+                                <i className="fa fa-sort-alpha-asc" aria-hidden="true" />
+                            </span>
+                            <span className="pop-over-item-name">{'Xếp các nhiệm vụ A->Z'}</span>
+                        </li>
+
+                        <li
+                            className="pop-over-item"
+                            onClick={() => {
+                                handleClickSortTask('desc');
+                            }}
+                        >
+                            <span className="pop-over-item-icon">
+                                <i className="fa fa-sort-alpha-desc" aria-hidden="true" />
+                            </span>
+                            <span className="pop-over-item-name">{'Xếp các nhiệm vụ Z->A'}</span>
                         </li>
                     </ul>
                 </div>

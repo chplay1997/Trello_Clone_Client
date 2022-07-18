@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 function ModalDelete(props) {
-    console.log('delete', props.idDelete);
     //Delete one list
     const handleDeleteList = (e) => {
         axios
