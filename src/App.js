@@ -7,7 +7,6 @@ function App() {
         <Router>
             <div className="App">
                 <Routes>
-                    <h1>ok</h1>
                     {publicRoutes.map((route, index) => {
                         let Layout = DefaultLayout;
 
