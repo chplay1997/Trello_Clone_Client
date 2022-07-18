@@ -3,8 +3,10 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import AddBoard from '~/components/Layout/components/AddBoard';
+import ModalDelete from '~/components/Layout/components/ModalDelete';
 
 function Boards() {
+    const [idDelete, setIdDelete] = useState('');
     const [boards, setBoards] = useState([]);
     //Get data from api
     const getBoards = async () => {
@@ -18,6 +20,16 @@ function Boards() {
     useEffect(() => {
         getBoards();
     }, []);
+
+    const handleClickDeleteBoard = async (e, boardId) => {
+        setIdDelete(boardId);
+    };
+
+    window.addEventListener('click', (e) => {
+        if (e.target.matches('.delete')) {
+            document.getElementsByClassName('cancel')[0].click();
+        }
+    });
 
     return (
         <div>
@@ -38,8 +50,23 @@ function Boards() {
                                 className={'board-title'}
                                 style={{ backgroundImage: `url(/images/board${board.image}.jpg)` }}
                                 state={{ boardName: board.name }}
+                                onClick={(e) => {
+                                    if (e.target.matches('.board-page-section-delete-icon')) {
+                                        e.preventDefault();
+                                    }
+                                }}
                             >
-                                <span className="board-tile-fade"></span>
+                                <span className="board-tile-fade">
+                                    <div className={'board-page-section-delete'}>
+                                        <i
+                                            className="fa fa-trash board-page-section-delete-icon"
+                                            aria-hidden="true"
+                                            data-toggle="modal"
+                                            data-target="#exampleModal"
+                                            onClick={(e) => handleClickDeleteBoard(e, board._id)}
+                                        />
+                                    </div>
+                                </span>
                                 <div className={'board-tile-details'}>{board.name}</div>
                             </Link>
                         </li>
@@ -63,6 +90,9 @@ function Boards() {
                     <AddBoard renderBoards={getBoards} />
                 </ul>
             </div>
+
+            {/* <!-- Modal Delete--> */}
+            <ModalDelete idDelete={idDelete} render={getBoards} target={'boards'} message="bảng" />
         </div>
     );
 }

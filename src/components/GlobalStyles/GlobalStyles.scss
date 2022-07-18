@@ -109,6 +109,28 @@ body {
     margin: 0 1% 2% 0;
 }
 
+//Delete board
+.board-page-section-delete {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    display: none;
+    i {
+        font-size: 22px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    i:hover {
+        zoom: 1.3;
+        color: #f90727dc;
+    }
+}
+
+.board-tile-fade:hover .board-page-section-delete {
+    display: block;
+}
+
 .board-title {
     border-radius: 3px;
     display: block;

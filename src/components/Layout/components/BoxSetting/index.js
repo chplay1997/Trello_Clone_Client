@@ -43,7 +43,7 @@ function BoxSetting(props) {
 
     //Sort task
     const handleClickSortTask = async (type) => {
-        const sort = await axios.put(`http://localhost:9000/api/list/sort`, {
+        await axios.put(`http://localhost:9000/api/list/sort`, {
             _id: props.idSetting,
             type: type,
         });
