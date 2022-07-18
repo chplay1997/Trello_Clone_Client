@@ -37,6 +37,7 @@ function Boards() {
                                 to={`/list/${board._id}`}
                                 className={'board-title'}
                                 style={{ backgroundImage: `url(/images/board${board.image}.jpg)` }}
+                                state={{ boardName: board.name }}
                             >
                                 <span className="board-tile-fade"></span>
                                 <div className={'board-tile-details'}>{board.name}</div>

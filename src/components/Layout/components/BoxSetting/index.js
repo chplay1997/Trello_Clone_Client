@@ -4,7 +4,6 @@ import ModalDelete from '~/components/Layout/components/ModalDelete';
 import Loading from '../Loading';
 
 function BoxSetting(props) {
-    console.log(props.idSetting);
     const [showLoading, setShowLoading] = useState(false);
 
     //Handle click add task and focus addtask

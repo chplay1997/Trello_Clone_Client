@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 import AddList from '~/components/Layout/components/AddList';
@@ -9,6 +9,7 @@ import BoxSetting from '~/components/Layout/components/BoxSetting';
 function List() {
     //get idBoard
     const { idBoard } = useParams();
+    const state = useLocation().state;
 
     const [input, setInput] = useState('');
     const [id, setId] = useState('');
@@ -156,6 +157,9 @@ function List() {
     };
     return (
         <div className={'board-wrapper'}>
+            <div className="name-board">
+                <h1>{state.boardName}</h1>
+            </div>
             <div id={'board'}>
                 <div className={'list-wrapper'}>
                     {/* ------------for loop view-------------- */}
