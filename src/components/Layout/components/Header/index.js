@@ -8,7 +8,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={'/'}>
+                <Link to={'/'} className={cx('home')}>
                     <img className={cx('icon')} alt="icon-trello" src={'/images/trello.gif'} />
                 </Link>
             </div>

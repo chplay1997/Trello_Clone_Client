@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import AddBoard from '~/components/Layout/components/AddBoard';
-import ModalDelete from '~/components/Layout/components/ModalDelete';
+import AddBoard from '~/components/Add/AddBoard';
+import ModalDelete from '~/components/ModalDelete';
 
 function Boards() {
     const [idDelete, setIdDelete] = useState('');

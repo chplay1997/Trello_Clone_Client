@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import ChangeTask from '../Layout/components/ChangeTask';
-import AddTask from '../Layout/components/AddTask';
+import ChangeTask from '../ChangeTask';
+import AddTask from '../Add/AddTask';
 
 function Tasks(props) {
     const [tasks, setTasks] = useState([]);

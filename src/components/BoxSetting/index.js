@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-import ModalDelete from '~/components/Layout/components/ModalDelete';
+import ModalDelete from '~/components/ModalDelete';
 import Loading from '../Loading';
 
 function BoxSetting(props) {

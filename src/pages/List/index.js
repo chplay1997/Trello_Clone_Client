@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
-import AddList from '~/components/Layout/components/AddList';
+import AddList from '~/components/Add/AddList';
 import Tasks from '~/components/Tasks';
-import BoxSetting from '~/components/Layout/components/BoxSetting';
+import BoxSetting from '~/components/BoxSetting';
 
 function List() {
     //get idBoard
