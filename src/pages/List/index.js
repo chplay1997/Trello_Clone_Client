@@ -3,7 +3,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 import AddList from '~/components/Add/AddList';
-import Tasks from '~/components/Tasks';
+import Tasks from '~/pages/List/Tasks';
 import BoxSetting from '~/components/BoxSetting';
 
 function List() {
