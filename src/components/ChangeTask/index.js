@@ -8,6 +8,7 @@ function ChangeTask(props) {
     const [input, setInput] = useState(props.task.title);
     const [textarea, setTextarea] = useState(props.task.description);
     const [showLoading, setShowLoading] = useState(false);
+    const [showLoadingSave, setShowLoadingSave] = useState(false);
 
     //Listen even click down and hiden box
     window.addEventListener('mousedown', (e) => {
@@ -25,6 +26,7 @@ function ChangeTask(props) {
 
         //handle click confirm delete
         if (e.target.matches('.delete')) {
+            setShowLoading(true);
             loading();
             if (document.getElementsByClassName('modal-backdrop')[0]) {
                 document.body.removeChild(document.getElementsByClassName('modal-backdrop')[0]);
@@ -48,13 +50,12 @@ function ChangeTask(props) {
                     console.log(error);
                 });
         }
+        setShowLoadingSave(true);
         loading();
     };
 
     // function open loading and close
     const loading = () => {
-        setShowLoading(true);
-
         //Open loading ui
         setTimeout(() => {
             props.setShowChange(false);
@@ -131,8 +132,9 @@ function ChangeTask(props) {
                         Lưu
                     </button>
                 </div>
+                {/* Loading Save*/}
+                {showLoadingSave && <Loading />}
             </div>
-
             {/* Loading */}
             {showLoading && <Loading />}
 
